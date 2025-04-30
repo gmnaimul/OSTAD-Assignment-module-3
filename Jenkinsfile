@@ -25,13 +25,15 @@ pipeline {
 
     post {
         always {
-            echo 'Build finished'
-        }
-        failure {
-            echo 'Build failed!'
-        }
-        success {
-            echo 'Build succeeded!'
-        }
+        echo 'Build finished'
+        junit 'test-results/results.xml'
+                }
+    success {
+        echo 'Build succeeded!'
+            }
+    failure {
+        echo 'Build failed!'
     }
+}
+
 }

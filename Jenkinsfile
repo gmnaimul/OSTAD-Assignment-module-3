@@ -17,7 +17,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'npm run check || true'
+                sh 'npm run test:ci'
+                
             }
         }
     }
